@@ -94,6 +94,11 @@ LOCAL_SHARED_LIBRARIES := \
 	libui \
 	libgui
 
+ifeq ($(TARGET_QCOM_DISPLAY_VARIANT),caf)
+    LOCAL_C_INCLUDES += hardware/qcom/display-caf/libgralloc
+else
+    LOCAL_C_INCLUDES += hardware/qcom/display/libgralloc
+endif
 LOCAL_MODULE:= libsurfaceflinger
 
 include $(BUILD_SHARED_LIBRARY)
