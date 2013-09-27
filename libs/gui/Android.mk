@@ -39,6 +39,15 @@ LOCAL_SHARED_LIBRARIES := \
 	libutils \
 	liblog
 
+ifneq ($(TARGET_QCOM_DISPLAY_VARIANT),)
+    LOCAL_C_INCLUDES += hardware/qcom/display-$(TARGET_QCOM_DISPLAY_VARIANT)/libgralloc
+else
+    LOCAL_C_INCLUDES += hardware/qcom/display/libgralloc
+endif
+
+ifeq ($(BOARD_EGL_NEEDS_LEGACY_FB),true)
+    LOCAL_CFLAGS += -DBOARD_EGL_NEEDS_LEGACY_FB
+endifc
 
 LOCAL_MODULE:= libgui
 
