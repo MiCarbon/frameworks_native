@@ -42,7 +42,7 @@ ifeq ($(BOARD_EGL_NEEDS_LEGACY_FB),true)
         ifeq ($(TARGET_QCOM_DISPLAY_VARIANT),legacy)
 	    LOCAL_CFLAGS += -DEGL_NEEDS_FNW
         endif
-        ifeq ($(TARGET_QCOM_DISPLAY_VARIANT),caf-legacy)
+        ifeq ($(TARGET_QCOM_DISPLAY_VARIANT),legacy-caf)
 	    LOCAL_CFLAGS += -DEGL_NEEDS_FNW
         endif
 endif
