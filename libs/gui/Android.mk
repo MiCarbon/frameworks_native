@@ -47,7 +47,7 @@ endif
 
 ifeq ($(BOARD_EGL_NEEDS_LEGACY_FB),true)
     LOCAL_CFLAGS += -DBOARD_EGL_NEEDS_LEGACY_FB
-endifc
+endif
 
 LOCAL_MODULE:= libgui
 
